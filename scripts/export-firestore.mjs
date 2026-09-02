@@ -249,4 +249,22 @@ manifest.totalBytes = statSync(join(outDir, 'posts.json')).size + grandBytes
 writeFileSync(join(outDir, 'manifest.json'), JSON.stringify(manifest, null, 2))
 
 console.log(`\n✅ Total bundle: ${(grandBytes / 1024 / 1024).toFixed(2)} MB → public/data/`)
+
+// RECORD THAT AN EXPORT ACTUALLY HAPPENED.
+//
+// Only this line, reached only by a run that dumped Firestore and survived every QA step above,
+// can write `ran: true`. That makes "when did an export last really run" a fact on disk rather
+// than a claim in a handoff -- which is what went stale when five deploys in a row asserted a
+// blocker that had already been closed. batch-status.mjs reads it; nothing else writes it.
+try {
+  const { writeLedger } = await import('./lib/exportPolicy.mjs')
+  const { execFileSync: gitSync } = await import('node:child_process')
+  let commit = null
+  try { commit = gitSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim() } catch { /* not a repo */ }
+  writeLedger(root, { ran: true, commit })
+  console.log('   export recorded in .export-ledger.json')
+} catch (e) {
+  console.warn(`   (could not record the export: ${e.message})`)
+}
+
 process.exit(0)

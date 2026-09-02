@@ -56,6 +56,11 @@ scripts/.devlog-index.tsv
 # run, never a fact about the repo.
 .validate-receipt.json
 
+# The export ledger written by scripts/export-firestore.mjs (on a real run) and by
+# scripts/deploy-web.sh (when a deploy contains the export instead). Machine-local, like the
+# validation receipt: it records what THIS checkout last did, so it must not travel in a commit.
+.export-ledger.json
+
 # The throwaway production build and the measurement dumps used by scripts/perf-baseline.mjs.
 # NEVER build into dist/: dist/build-info.json is the only local record of what production is
 # serving, and vite build empties the directory it writes to.

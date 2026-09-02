@@ -137,6 +137,10 @@ step('cross-section report completeness', ['node', 'scripts/test-cross-section-c
 // comes back. Scoped to the ACTIVE runtime and configuration surface: DEVLOG and the security
 // audit records describe the incident and must keep saying so.
 step('no anthropic integration', ['node', 'scripts/test-no-anthropic-integration.mjs'])
+// A deploy may not skip the Firestore export on a justification nobody re-checked. Five
+// consecutive deploys did exactly that, and by the last of them the qc-pin blocker they cited had
+// been closed for a day and an export had already shipped through it. Pure and offline.
+step('export policy', ['node', 'scripts/test-export-policy.mjs'])
 // --base names one server and every browser gate must use it. Three gates were declared
 // `url: 'none'`, took no URL, and fell back to :5173 on their own; a run aimed at a branch server
 // then proved nothing about three of its gates while the receipt still recorded the branch tree.

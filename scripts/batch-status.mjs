@@ -19,6 +19,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { requiredProfile, diffBaseline, readReceipt, worktreeTree, rankOf } from './lib/pipeline.mjs'
+import { decideExport, readLedger } from './lib/exportPolicy.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const git = args => {
@@ -79,6 +80,48 @@ if (!receipt) console.log('\n  receipt   none — nothing has proved the current
 else if (receipt.tree !== tree) console.log(`\n  receipt   STALE — proved tree ${String(receipt.tree).slice(0, 7)}, on disk ${String(tree).slice(0, 7)}`)
 else if (rankOf(receipt.profile) < rankOf(need.required)) console.log(`\n  receipt   ${receipt.profile} — BELOW the ${need.required} floor this batch now carries`)
 else { proved = true; console.log(`\n  receipt   ${receipt.profile} on the current tree — meets the ${need.required} floor`) }
+
+// -- The export, in the only three states it can honestly be in ------------------------------
+// "Deployed with SKIP_EXPORT=1" was reported five times in a row without anyone re-checking the
+// justification, and by the last of them it had been false for a day. So this does not repeat a
+// remembered status: it asks scripts/lib/exportPolicy.mjs - the same function preflight-deploy.mjs
+// enforces - what THIS environment would be allowed to do, and it reads the ledger that only a
+// real export run can write.
+const ledger = readLedger(ROOT)
+const verdict = decideExport({
+  skipExport: process.env.SKIP_EXPORT === '1',
+  required: need.required,
+  reason: process.env.SKIP_EXPORT_REASON,
+  approvedBy: process.env.SKIP_EXPORT_APPROVED_BY,
+  evidence: process.env.SKIP_EXPORT_EVIDENCE,
+})
+
+const EXPORT_STATE = {
+  'ran': 'EXPORT WILL RUN - the ordinary path, and it works',
+  'contained-ui': 'EXPORT UNNECESSARY - approved UI-only containment',
+  'contained-certified': 'EXPORT SKIPPED ON A DATA-BEARING DIFF - approved, and stated',
+  'refused': 'EXPORT SKIP REFUSED - no current reason or owner approval',
+}
+console.log(`
+  export    ${EXPORT_STATE[verdict.status]}`)
+for (const line of verdict.why) console.log(`            ${line}`)
+
+// The most recent AUTHORITATIVE export proof: a run that actually dumped Firestore.
+const lastReal = ledger?.lastRealExport ?? (ledger?.ran ? { at: ledger.at, commit: ledger.commit } : null)
+if (lastReal?.commit) {
+  const since = git(['rev-list', '--count', `${lastReal.commit}..HEAD`])
+  console.log(`            last real export: ${String(lastReal.commit).slice(0, 7)} at ${lastReal.at}`
+    + (since ? ` - ${since} commit(s) since` : ''))
+} else {
+  console.log('            last real export: not recorded on this machine (.export-ledger.json absent).')
+  console.log('            The authoritative proof on record is commit f3f0901, 2026-09-01 - the Stage B')
+  console.log('            deploy export, run with NO SKIP_EXPORT, reproducing the committed bundle.')
+}
+if (verdict.status === 'refused') {
+  console.log('            The qc-pin blocker that justified the 2026-08-27..09-02 skips is CLOSED:')
+  console.log('            the question-identity registry retired the positional ids it depended on.')
+}
+
 
 // ── What to do next ───────────────────────────────────────────────────────────────────────────
 console.log('\n  next')

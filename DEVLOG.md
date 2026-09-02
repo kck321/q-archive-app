@@ -8997,3 +8997,101 @@ effect body. That effect was rewritten to derive `clusterPosts` and `loadingPost
 previous chapter's posts could still be on screen. Lint is back to the exact pre-change baseline.
 
 **Not deployed.** Held for owner review, per instruction.
+
+---
+
+## 2026-09-02 — CORRECTION: the qc-pin export blocker was already closed, and this log said otherwise
+
+**This entry corrects the record. It does not edit it.** The entries above stay exactly as their
+sessions wrote them; a session's honest belief is part of the history. What follows is what was
+true on the dates concerned.
+
+### The claim, and when it stopped being true
+
+The deploy entry immediately above this one (2026-09-02, commit `9136952`) says:
+
+> `SKIP_EXPORT=1 npm run deploy:web` — the fifth consecutive deploy on that documented workaround
+> **while the qc-pin export blocker stands**
+
+**The blocker did not stand. It had been closed for a day, and an export had already shipped
+through it.** The same entry's "Still open" line — "the final 240 ship with the next deploy
+(UI-only path needs `SKIP_EXPORT=1` while the qc-pin export blocker stands)" — is wrong for the
+same reason.
+
+Traced from git and disk, not from this log:
+
+| Date | Evidence | Meaning |
+|---|---|---|
+| 2026-08-27 | DEVLOG: export died in `materialize-literal-spans`, `qc-h` → `qc-f` | The blocker was **real**. Accurate record. |
+| 2026-08-31 | Gate 2: two read-only exports, separate worktrees, 34s and 40s, **byte-identical across all 21 `public/data` files** | The export **worked**. |
+| 2026-09-01 | Commit **`f3f0901`** "The deploy export closes the last Stage B gate: posts.json is regenerated, not reconstructed" — on master, ancestor of HEAD | A real deploy export **shipped**, no `SKIP_EXPORT`. The first honest export since seed 75. |
+| 2026-09-02 | Commit `9136952` deployed with `SKIP_EXPORT=1`, citing the blocker | **Stale.** The justification was inherited, not re-checked. |
+
+### Why the blocker cannot recur
+
+The failure was: the Firestore dump carried hash-id question rows on #1915 and #1944 that no
+longer prior-matched local `questions.json`, so the **positionally minted** `qc-` ids shifted by
+two (`qc-h` → `qc-f`) and `materialize-literal-spans.mjs` refused rather than land a reviewed
+ruling on a drop nobody ruled on.
+
+Stage B deleted the mechanism. `identity/question-identity-registry.json` (6,643 entries) is the
+identity authority; `id: prior?.id ?? mkId()` is gone; all five positional allocators are gone with
+**no fallback**, and an unrecognised candidate STOPS the build. Verified on disk this session:
+`node scripts/test-question-identity.mjs` → **61/61**, including *"40b. the transient minter no
+longer exists in the library"*. There is nothing left to shift.
+
+### Every occurrence, classified
+
+- **Historical record — left alone.** DEVLOG 2129, 2913, 2917, 3922, 3965, 3973, 4532, 7472, 8142,
+  8146, 8167, 8209, 8269, 8273, 8332, 8333, 8389, 8392, 8485, 8570, 8667; `.gitignore` 109;
+  `QUESTION-IDENTITY-STABILIZATION/18` and `/33`; `MANIFEST.json`;
+  `NEXT-SESSION-HANDOFF.md` validation row (a dated 2026-08-25 snapshot).
+- **Stale current instruction — corrected.** `PROJECT_CONTEXT.md` "EXPORT PATH BLOCKED for data
+  deploys (28 Aug 2026)"; `NEXT-SESSION-HANDOFF.md` item 0c "The Firestore export is BLOCKED" and
+  the production row that pointed at it. Both are read by the next session as *current state* and
+  were being obeyed as instructions. Replaced with the closure and its evidence.
+- **Stale historical entry — corrected here, not rewritten.** DEVLOG 8843 and 8865-8866, above.
+- **Still-valid containment — kept and strengthened.** `deploy-web.sh`'s "SKIP_EXPORT IS A QUOTA
+  ESCAPE HATCH, NOT A WORKFLOW"; `audit/CURRENT-STATE.md` rule 8.
+
+### The mechanism, so this cannot happen a sixth time
+
+The defect was never the flag. It was that a claim about the present had nothing re-checking it,
+and each deploy inherited the last one's justification.
+
+- **`scripts/lib/exportPolicy.mjs`** — one pure `decideExport()`. `SKIP_EXPORT=1` now requires a
+  **current written reason** (`SKIP_EXPORT_REASON`, ≥20 chars) and **explicit owner approval**
+  (`SKIP_EXPORT_APPROVED_BY`), every time. No standing permission.
+- A reason that *claims the export is failing* must name the current failing run in
+  `SKIP_EXPORT_EVIDENCE`. **A reason citing the qc-pin blocker without evidence is refused by
+  name**, and the refusal says the blocker is closed and points at `f3f0901`.
+- **A certified/data-bearing diff can never skip the export silently.** With approval it is
+  allowed and reported as `EXPORT SKIPPED ON A DATA-BEARING DIFF — approved, and stated`; without,
+  the deploy stops.
+- **`scripts/preflight-deploy.mjs`** enforces the verdict as check 5 — it runs *before* the export
+  step, so `SKIP_EXPORT` is judged while the deploy is still refusable.
+- **`scripts/batch-status.mjs`** reports the same verdict from the same function, in the three
+  states the owner asked to be able to tell apart: *export will run* · *export unnecessary for
+  this approved UI-only containment* · *export skipped on a data-bearing diff*, plus the refusal.
+- **`.export-ledger.json`** (machine-local, gitignored, like the validation receipt). Only
+  `export-firestore.mjs`, at the end of a run that actually dumped Firestore and passed every QA
+  step, can write `ran: true`. "When did an export last really happen" is now a fact on disk
+  instead of a sentence in a handoff.
+- **`scripts/test-export-policy.mjs`** — 36 assertions, registered in `validate.mjs` as `export
+  policy`. It replays the exact stale sentence and asserts it is refused; it asserts preflight
+  *fails* on the verdict rather than only printing it; and it asserts the three files a session
+  reads as current state do not describe the export as blocked. Pure and offline: no deploy, no
+  Firestore read.
+
+That last assertion earned itself immediately. Its first version matched `PROJECT_CONTEXT.md`'s
+heading and **missed** `NEXT-SESSION-HANDOFF.md`'s "The Firestore export is BLOCKED" three lines
+away — a false pass, which is worse than no check, because it is the one a session trusts. The
+pattern was broadened and the handoff corrected.
+
+### One more figure, checked
+
+`git rev-list --count 7f73af5..9136952` = **12**. The DEVLOG's "12 commits" is correct. There is no
+"13 commits" claim anywhere in the repo — searched across all tracked files.
+
+**No Firestore was read for any of this.** The correction is entirely from git, disk and the
+existing evidence artifacts. `public/data` unchanged; `SEED_VERSION` unchanged. Not deployed.

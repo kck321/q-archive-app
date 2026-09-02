@@ -13,7 +13,7 @@ Do not reopen any of them.
 | | |
 |---|---|
 | HEAD | see `git log -1` |
-| production | **seed 116, DEPLOYED 2026-08-30** — commit 0e968f3, tree ad244e7e5bee, sw qdrops-20260830-122844; #4688 items 1-17 ruled Directives on top of the two picture batches (1,450 images); `verify-live.mjs` 16/16, live render proved green. Deployed with `SKIP_EXPORT=1` — see the qc-pin blocker below |
+| production | **derive it — `node scripts/batch-status.mjs`, or `dist/build-info.json`.** As of 2026-09-02 that is commit `9136952`, seed 117, sw `qdrops-20260902-075015`, `verify-live.mjs` 16/16. The rows below this one are the 2026-08-25/30 snapshot and are kept as a record of that date, not as current state. |
 | invariants | 222/222 — manifest re-certified at seed 98 at the deploy checkpoint |
 | seed | **98** — shipped |
 | manifest | re-certified 2026-08-25 (seed 98); context baseline moved 445→444/311→310 with #1443's `Texts` promotion (see `verify-context-render.mjs`) |
@@ -130,38 +130,37 @@ on the finished bundle records 1532/9271 and the cleanup then refuses.
 
 ## Open for the owner
 
-0c. **The Firestore export is BLOCKED — fix before any deploy that needs real edits baked.**
-   `export-firestore.mjs` runs `materialize-literal-spans.mjs --apply`, which now ABORTS:
+0c. **CLOSED 2026-08-31 — the Firestore export is NOT blocked.** *(corrected 2026-09-02. The
+   original text is kept in DEVLOG.md, where it was written; it is removed from here because this
+   file is read as CURRENT state and it was being obeyed as an instruction.)*
 
-       FAIL  question literal spans = the 5 owed records
-             ["JPIqQwo0moEuwzhHMzXL","q-queue-2740-35","q-queue-2971-39","q-queue-4454-53","qc-f"]
-       Aborting: 1 QA check(s) failed. Nothing written.
+   The ordinary path works: `npm run deploy:web` dumps Firestore into `public/data`.
 
-   Every other QA check in that materialiser passes (certified questions 6,509 / claims 10,519 /
-   predictions 957 / conclusions 964 / checkable 1,920, all unchanged; every span array matches its
-   source). The wrapper then prints "export failed (quota/offline)", which is a generic catch-all and
-   is MISLEADING — this is a QA refusal, not the 2026-08-25 quota problem.
+   **Authoritative proof.** Two read-only exports from separate worktrees on 2026-08-31,
+   byte-identical across all 21 `public/data` files. Then a real deploy export shipped — commit
+   `f3f0901`, 2026-09-01, **no `SKIP_EXPORT`** — reproducing the committed bundle byte-for-byte.
+   The first honest export since seed 75. Both commits are ancestors of HEAD.
 
-   **KNOWN SINCE 2026-08-27 — this is the "qc-pin issue", already root-caused. Read that DEVLOG
-   entry before touching it.** Cause recorded there: the Firestore dump carries hash-id question
-   rows on #1915 and #1944 that no longer prior-match the local questions.json, so the locally
-   minted qc- ids shift by one position (qc-h -> qc-f). Those ids are POSITIONAL, and rulings are
-   keyed on them — `apply-step3b1.mjs` keys 182 demotions on question-row ids — so a shifted id can
-   land a ruling on the WRONG drop, silently. That is what the pin is for.
+   **Why it cannot recur.** The blocker was `materialize-literal-spans.mjs` aborting on the owed
+   literal `qc-h` because the Firestore dump's hash-id rows on #1915/#1944 stopped prior-matching,
+   shifting the POSITIONALLY minted `qc-` ids. Stage B deleted every positional allocator;
+   `identity/question-identity-registry.json` is now the identity authority for all 6,643
+   certified questions and an unrecognised candidate STOPS the build. Verified live:
+   `node scripts/test-question-identity.mjs` → 61/61, including "the transient minter no longer
+   exists in the library".
 
-   **Do NOT "fix" it by editing OWED_LITERALS to accept qc-f.** Find why #1915/#1944 stopped
-   prior-matching. A durable fix is to make qc- ids content-derived (postNum + text) rather than
-   sequential, which retires the whole class of bug.
+   **`SKIP_EXPORT=1` is containment, not a default.** Every use needs its own current written
+   reason and explicit owner approval — enforced by `scripts/preflight-deploy.mjs` via
+   `scripts/lib/exportPolicy.mjs`, reported by `scripts/batch-status.mjs`:
 
-   Three consecutive deploys have now shipped with `SKIP_EXPORT=1` under the script's documented
-   condition (2026-08-27, 08-28, 08-29) — safe only because Firestore has been write-frozen since
-   the 12 Aug rules, so no unbaked owner edits can exist, and each bundle was certified first.
-   It is a standing workaround, NOT a fix.
+       SKIP_EXPORT=1 SKIP_EXPORT_REASON="..." SKIP_EXPORT_APPROVED_BY="..." npm run deploy:web
 
-   **The trap that costs time:** the aborted export still dirties `public/data/entities.json`,
-   `posts.json` and `questions.json` before it gives up, and `preflight-deploy.mjs` then refuses the
-   publish. Restore with `git checkout -- public/data` — do not reach for a flag.
+   A reason claiming the export is failing also needs `SKIP_EXPORT_EVIDENCE` naming the current
+   failing run; citing the closed qc-pin blocker without it is refused by name. A certified /
+   data-bearing diff can never skip the export silently.
 
+   If it does abort again, that is a NEW fault. Do not edit `OWED_LITERALS`. The old trap still
+   holds: an aborted export leaves `posts/questions/entities.json` half-rebuilt — `git restore`.
 
 0a. **The quoted-post rulings.** `Q Quoted Posts - REVIEW 2026-08-24.xlsx` proposes a reading for
    2,800 lines in the 1,077 quoted blocks that are not drops. NOTHING IS APPLIED — invariant 9 keeps

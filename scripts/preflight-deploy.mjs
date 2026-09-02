@@ -16,6 +16,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { readReceipt, worktreeTree, requiredProfile, rankOf, RECEIPT } from './lib/pipeline.mjs'
+import { decideExport } from './lib/exportPolicy.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const sh = c => execSync(c, { cwd: ROOT, encoding: 'utf8' }).trim()
@@ -74,6 +75,39 @@ if (!receipt) {
   t('the apply chain ran (idempotence proved)', !needsChain || receipt.chain === true,
     needsChain ? (receipt.chain ? 'chain ran twice' : '--no-chain receipt cannot publish a certified change')
       : 'not required at this profile')
+}
+
+// 5. SKIPPING THE EXPORT IS CONTAINMENT, AND CONTAINMENT IS DECIDED HERE - NOT REMEMBERED.
+//
+// deploy-web.sh runs this BEFORE the export step, so SKIP_EXPORT is already in the environment
+// and can be judged while the deploy is still refusable. Five consecutive deploys shipped on the
+// same inherited justification, and it had been false for a day by the end of the run: the
+// qc-pin blocker it cited was closed by the question-identity registry and an export had already
+// shipped through it at f3f0901. The rules live in scripts/lib/exportPolicy.mjs, as a pure
+// function, so they are tested without a deploy and batch-status.mjs reports the same verdict.
+const exportVerdict = decideExport({
+  skipExport: process.env.SKIP_EXPORT === '1',
+  required: need.required,
+  reason: process.env.SKIP_EXPORT_REASON,
+  approvedBy: process.env.SKIP_EXPORT_APPROVED_BY,
+  evidence: process.env.SKIP_EXPORT_EVIDENCE,
+})
+t('the export policy allows this deploy', exportVerdict.allow, exportVerdict.headline)
+for (const line of exportVerdict.why) console.log(`          ${line}`)
+if (!exportVerdict.allow) {
+  console.log('')
+  console.log('          Run the export instead - it is the ordinary path and it works:')
+  console.log('              npm run deploy:web')
+  console.log('')
+  console.log('          Or, if the owner has approved containment for THIS deploy, set all of')
+  console.log('          SKIP_EXPORT=1, SKIP_EXPORT_REASON and SKIP_EXPORT_APPROVED_BY on the')
+  console.log('          deploy command, and SKIP_EXPORT_EVIDENCE too if the reason claims the')
+  console.log('          export itself is failing.')
+}
+if (exportVerdict.status === 'contained-certified') {
+  console.log('')
+  console.log('          !! This deploy carries CERTIFIED DATA and is not re-dumping Firestore.')
+  console.log('             It is allowed because it is approved and stated, never because it is quiet.')
 }
 
 console.log(fail ? `\n  ${fail} pre-flight check(s) failed — NOT publishing.\n` : '\n  pre-flight clear.\n')

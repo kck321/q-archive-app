@@ -29,6 +29,14 @@ SITE_DOMAIN="${SITE_DOMAIN:-qdrops.app}"
 # aliases. Skipping this ships a site that silently lacks your latest analysis work.
 # SKIP_EXPORT=1 publishes the bundle already on disk instead of re-dumping Firestore.
 #
+# SKIP_EXPORT IS CONTAINMENT, AND EVERY USE NEEDS ITS OWN CURRENT REASON AND OWNER APPROVAL.
+# scripts/preflight-deploy.mjs (which has already run) refuses the deploy unless SKIP_EXPORT_REASON
+# and SKIP_EXPORT_APPROVED_BY are both set for THIS deploy, and refuses a reason that claims the
+# export is broken without SKIP_EXPORT_EVIDENCE naming the current failing run. Five consecutive
+# deploys once shipped on a single inherited justification which had gone stale — the qc-pin
+# blocker they cited was closed by the question-identity registry, and a real export had already
+# shipped through it at f3f0901 on 2026-09-01. There is no standing permission.
+#
 # SKIP_EXPORT IS A QUOTA ESCAPE HATCH, NOT A WORKFLOW. Seed 75 shipped through it because the
 # export re-derived audit/entities-audit.json with a detector that had moved since the section was
 # certified, produced 9,804 entity mentions against 9,786, and apply-entities.mjs refused to write.
@@ -44,7 +52,19 @@ SITE_DOMAIN="${SITE_DOMAIN:-qdrops.app}"
 #
 # The manifest gate below still runs either way, so a genuinely stale bundle is still refused.
 if [ "$SKIP_EXPORT" = "1" ]; then
+  # Pre-flight has already judged this skip against scripts/lib/exportPolicy.mjs and refused the
+  # deploy if the reason or the approval was missing, so reaching here means the owner approved
+  # THIS skip, today, in words. Record what was approved next to the run that used it.
   echo "SKIP_EXPORT=1 — publishing the bundle on disk (manifest gate below still applies)"
+  echo "  reason:   ${SKIP_EXPORT_REASON}"
+  echo "  approved: ${SKIP_EXPORT_APPROVED_BY}"
+  node -e "import('./scripts/lib/exportPolicy.mjs').then(m => m.writeLedger(process.cwd(), {
+    ran: false,
+    reason: process.env.SKIP_EXPORT_REASON ?? '',
+    approvedBy: process.env.SKIP_EXPORT_APPROVED_BY ?? '',
+    evidence: process.env.SKIP_EXPORT_EVIDENCE ?? '',
+    commit: process.env.DEPLOY_COMMIT ?? null,
+  }))"
 else
   echo "Baking current Firestore edits + aliases into public/data/ ..."
   node scripts/export-firestore.mjs || {

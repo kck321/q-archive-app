@@ -423,17 +423,44 @@ after SECTION_TOTALS for any `emphasis` key — comments included — so the ret
 be named with a colon anywhere below that line. The mobile top bar stays TEXT-ONLY (a 28px icon
 was tried and pulled the same day).
 
-## EXPORT PATH BLOCKED for data deploys (28 Aug 2026)
+## EXPORT PATH: OPEN. The 28 Aug blocker is CLOSED. (corrected 2026-09-02)
 
-`export-firestore.mjs` currently FAILS the pinned literal-spans QA: the Firestore dump carries
-hash-id question rows on #1915 and #1944 that no longer prior-match local `questions.json`, so
-the minted `qc-` ids shift (qc-h → qc-f) and `materialize-literal-spans.mjs` aborts. UI-only
-deploys can ship the certified committed bundle with `SKIP_EXPORT=1` (Firestore has been
-write-frozen since the 12 Aug rules, so the bundle IS current — that is why the escape is
-honest). Before the next DATA deploy, reconcile Firestore's questions collection with local.
-Do NOT edit `OWED_LITERALS` to make it pass — the pin is doing its job; find why the two drops
-stopped prior-matching. If the export aborts it leaves posts/questions/entities.json half
-rebuilt — `git restore` them.
+**The ordinary path is to run the export.** `npm run deploy:web` dumps Firestore into
+`public/data` and that works. It is not blocked, and it has not been blocked since 2026-08-31.
+
+**Authoritative proof.** Two read-only exports from separate worktrees, 2026-08-31, byte-identical
+across all 21 `public/data` files. Then a real deploy export shipped: commit `f3f0901`,
+2026-09-01, **no `SKIP_EXPORT`**, reproducing the committed bundle byte-for-byte — the first
+honest export since seed 75. Both commits are on master and are ancestors of HEAD.
+
+**Why the old blocker cannot recur.** It was: the Firestore dump carried hash-id question rows on
+#1915/#1944 that no longer prior-matched local `questions.json`, so the POSITIONALLY minted `qc-`
+ids shifted (`qc-h` -> `qc-f`) and `materialize-literal-spans.mjs` aborted rather than land a
+reviewed ruling on the wrong drop. Stage B deleted that mechanism:
+`identity/question-identity-registry.json` is the identity authority for all 6,643 certified
+questions, every positional allocator is gone with no fallback, and an unrecognised candidate
+STOPS the build (`scripts/lib/questionIdentity.mjs`; 61 assertions in
+`scripts/test-question-identity.mjs`). There is nothing left to shift.
+
+**The historical record stays as written.** The DEVLOG entries for 2026-08-27 through 2026-09-02
+describe the blocker as standing because that is what those sessions believed. The last of them
+(2026-09-02, `9136952`) was already wrong when written — corrected in place at the end of this
+DEVLOG, not by editing the original.
+
+`SKIP_EXPORT=1` IS CONTAINMENT, NOT A DEFAULT. Every use needs its own **current written reason**
+and **explicit owner approval**, this deploy, in words — `scripts/lib/exportPolicy.mjs` decides,
+`scripts/preflight-deploy.mjs` enforces, `scripts/batch-status.mjs` reports the same verdict:
+
+    SKIP_EXPORT=1 SKIP_EXPORT_REASON="..." SKIP_EXPORT_APPROVED_BY="..." npm run deploy:web
+
+A reason that claims the export is failing must also set `SKIP_EXPORT_EVIDENCE` naming the current
+failing run — a reason citing the closed qc-pin blocker without it is refused by name. A
+certified/data-bearing diff can never skip the export *silently*: with approval it is allowed and
+reported loudly; without it the deploy stops.
+
+If the export genuinely aborts again, that is a NEW fault. Do not reach for the flag and do not
+edit `OWED_LITERALS`. The old trap still applies: an aborted export leaves
+`public/data/{posts,questions,entities}.json` half-rebuilt — `git restore` them.
 
 ## Still open before launch
 
