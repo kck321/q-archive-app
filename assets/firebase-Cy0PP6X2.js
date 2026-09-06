@@ -1,0 +1,1 @@
+import{e as a,i as e}from"./firebase-DXByOkvp.js";const p={apiKey:"AIzaSyA5szQhUyAVJQPo3Y6hw9f9WOJvS7qWAck",authDomain:"q-app-2ce0a.firebaseapp.com",projectId:"q-app-2ce0a",storageBucket:"q-app-2ce0a.firebasestorage.app",messagingSenderId:"1001344222107",appId:"1:1001344222107:web:5aaa8c3987de768aa4973e"},i=e(p),s=a(i,"default");export{s as db};

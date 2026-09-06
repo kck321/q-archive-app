@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/icon-192-v2.png" />
+    <!-- viewport-fit=cover so the app can paint under the notch/home indicator once
+         installed; the safe-area padding below keeps content clear of both. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Q Drops</title>
+    <meta name="description" content="An open archive for Q research. Every drop, searchable and cross-referenced." />
+
+    <!-- Open Sans for the drop text — the same face qalerts.app sets on its body, so a drop
+         reads identically on both sites (owner ruling, 2026-08-25). Only .post-text uses it;
+         the app chrome keeps the system stack. Offline/blocked fetch falls back to Arial. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Installable web app -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#0a0e1a" />
+
+    <!-- iOS ignores the manifest for these, so they have to be declared separately. -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon-v2.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Q Drops" />
+    <script type="module" crossorigin src="/assets/index-B1LIGf8b.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/react-BLE9MYGh.js">
+    <link rel="modulepreload" crossorigin href="/assets/charts-C8K6gExp.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-cWIdvUDJ.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

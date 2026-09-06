@@ -1,0 +1,18 @@
+{
+  "builtAt": "2026-09-06T02:46:51.657Z",
+  "commit": "581c104f9eb14372face6d489e09466be5089a90",
+  "commitShort": "581c104",
+  "branch": "master",
+  "tree": "8fa5619426138de56e1eabc970a48b91d6c2dbc9",
+  "dirty": false,
+  "seed": 123,
+  "certifiedAt": "2026-09-06T00:18:33.707Z",
+  "manifestSha": "22aacfa16db8c5519e9dc334f519622f54c1199d382e34fe4fc224aab93b66ff",
+  "swVersion": "qdrops-20260905-224651",
+  "assets": [
+    "/assets/charts-C8K6gExp.js",
+    "/assets/index-B1LIGf8b.js",
+    "/assets/index-cWIdvUDJ.css",
+    "/assets/react-BLE9MYGh.js"
+  ]
+}
