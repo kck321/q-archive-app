@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- App icon: the Q ring with DROPS set inside it.
+       Drawn full-bleed with the artwork inside the centre 80%, which is the safe zone a
+       maskable icon needs — Android crops icons to whatever shape the launcher uses, and
+       anything outside that circle can be cut off. -->
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="32%" r="78%">
+      <stop offset="0%" stop-color="#1b2743"/>
+      <stop offset="100%" stop-color="#080b14"/>
+    </radialGradient>
+    <linearGradient id="ring" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f3f4f6"/>
+      <stop offset="55%" stop-color="#9ca3af"/>
+      <stop offset="100%" stop-color="#4b5563"/>
+    </linearGradient>
+    <linearGradient id="drop" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" fill="url(#bg)"/>
+
+  <!-- Q bowl -->
+  <circle cx="256" cy="244" r="140" fill="none" stroke="url(#ring)" stroke-width="30"/>
+  <!-- Q tail -->
+  <path d="M 330 322 L 400 400" stroke="url(#ring)" stroke-width="34" stroke-linecap="round" fill="none"/>
+
+  <!-- Popcorn above the wordmark. Drawn rather than set as an emoji character: emoji render
+       from a system font, and the icon has to look identical on Android, iOS, Windows and in
+       the browser tab — a font-dependent glyph would differ on each, or fail to render at all
+       in the SVG rasteriser used at build time. -->
+  <g transform="translate(256 176)">
+    <!-- Popped kernels -->
+    <g fill="#fde68a">
+      <circle cx="-26" cy="-24" r="15"/>
+      <circle cx="-2"  cy="-34" r="16"/>
+      <circle cx="24"  cy="-24" r="15"/>
+      <circle cx="-14" cy="-10" r="14"/>
+      <circle cx="12"  cy="-10" r="14"/>
+    </g>
+    <g fill="#fffbeb" opacity="0.85">
+      <circle cx="-20" cy="-30" r="6"/>
+      <circle cx="4"   cy="-40" r="6"/>
+      <circle cx="18"  cy="-28" r="5"/>
+    </g>
+    <!-- Striped tub -->
+    <path d="M -30 -2 L -22 52 L 22 52 L 30 -2 Z" fill="#ef4444"/>
+    <path d="M -21 -2 L -15 52 L -6 52 L -9 -2 Z" fill="#fef2f2"/>
+    <path d="M 3 -2 L 6 52 L 15 52 L 21 -2 Z" fill="#fef2f2"/>
+  </g>
+
+  <!-- DROPS across the middle of the Q -->
+  <text x="256" y="284" text-anchor="middle"
+        font-family="Segoe UI, Helvetica Neue, Arial, sans-serif"
+        font-size="54" font-weight="800" letter-spacing="1" fill="#f3f4f6">DROPS</text>
+</svg>
